@@ -8,11 +8,11 @@ let userLogedIn = false;
 function LoginFrm() {
     return (
         <div className='hero  bg-base-200 min-h-screen '>
-            <div className='card glass2 w-full md:max-w-sm lg:max-w-md mx-auto  shadow-2xl rounded-lg p-6 z-10'>
+            <div className='card glass2 w-full md:max-w-sm lg:max-w-md mx-auto  shadow-2xl rounded-2xl p-6 z-10'>
                 <img src='/logo.png' alt='Logo' className='my-1 mx-auto' style={{ maxWidth: 180 }} />
                 <h1 className='text-center text-3xl lg:text-4xl font-bold mb-4'>FShare</h1>
                 <form className='space-y-4 '>
-                    <label class="input input-bordered flex items-center gap-2">
+                    <label class="input input rounded-lg flex items-center gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
@@ -22,10 +22,10 @@ function LoginFrm() {
                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                         </svg>
 
-                        <input type="text" class="grow" placeholder="Username" />
+                        <input type="text" className="grow rounded-lg" placeholder="Username" />
                     </label>
 
-                    <label className='input input-bordered flex items-center gap-2'>
+                    <label className='input input rounded-lg flex items-center gap-2'>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
@@ -40,7 +40,7 @@ function LoginFrm() {
                         </svg>
 
 
-                        <input type="password" className="grow input input" placeholder='password' />
+                        <input type="password" className="grow input input rounded-lg" placeholder='password' />
                     </label>
 
 
@@ -48,7 +48,7 @@ function LoginFrm() {
                         <a href='#' className='label-text-alt link link-hover'>Forgot password?</a>
                     </label>
 
-                    <button className='btn btn-outline w-full'>Login</button>
+                    <button className='btn btn-outline w-full rounded-lg'>Login</button>
                 </form>
             </div>
         </div>

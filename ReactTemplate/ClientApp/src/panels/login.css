@@ -10,7 +10,7 @@
     padding: 2rem;
     background: rgba(3, 9, 15, 0.281); /* Semi-transparent white */
     border-radius: 10px;
-    backdrop-filter: blur(15px); /* Adjust blur intensity */
+    backdrop-filter: blur(0px); /* Adjust blur intensity */
     border: 1px solid rgba(255, 255, 255, 0.116); /* Optional border for enhanced effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
 }
