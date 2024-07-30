@@ -33,7 +33,7 @@ function SideBarBTN({ name, ICON, callBack, state }) {
   );
 }
 
-function DrawerBTN({ name, ICON, callBack, state }) {
+function DrawerBTN({ name, ICON, callBack, state , onClick }) {
   // Prevent callBack from executing immediately
   const handleClick = () => callBack(name);
 
@@ -45,7 +45,7 @@ function DrawerBTN({ name, ICON, callBack, state }) {
         style={{
           height: "35px",
           borderRadius: '5px',
-          backgroundColor: state === name ? '#ef0533' : '#000',
+          backgroundColor: state.toLowerCase() === name.toLowerCase() ? '#ef0533' : '#000',
           border: 'none',
           padding: '0',
           cursor: 'pointer',

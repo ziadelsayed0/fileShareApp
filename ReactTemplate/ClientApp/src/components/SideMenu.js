@@ -16,7 +16,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'; import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 
-import {SideBarBTN,DrawerBTN} from "./SideBarBtn";
+import { SideBarBTN, DrawerBTN } from "./SideBarBtn";
 
 
 
@@ -26,26 +26,40 @@ import {SideBarBTN,DrawerBTN} from "./SideBarBtn";
 function MdLGSideMenu({ handleClick, clicked }) {
   return (<div style={{ maxWidth: '80px', height: '100vh', backgroundColor: 'black' }} className="fixed top-0 left-0 flex flex-col items-center justify-center">
     <ul className="menu rounded-box h-full flex flex-col items-center justify-start ">
-      <img src="/logo.png" alt="Logo" className='my-1' />
-      <p className="text-lg ms-1" style={{ color: "white", fontWeight: "500" }}>FShare</p>
 
       <SideBarBTN name="Home" ICON={HomeOutlinedIcon} callBack={handleClick} state={clicked} />
       <SideBarBTN name="Connect" ICON={CastConnectedOutlinedIcon} callBack={handleClick} state={clicked} />
       <SideBarBTN name="Setting" ICON={SettingsOutlinedIcon} callBack={handleClick} state={clicked} />
 
     </ul>
+    <img src="/logo.png" alt="Logo" className='my-1' />
+    <p className="text-lg ms-1" style={{ color: "white", fontWeight: "500" }}>FShare</p>
   </div>)
 }
 
 function SmSideMenu({ clicked, handleClick }) {
+  // const [isDrawerOpen, setIsDrawerOpen] = useState("false");
+  // const handleClick2 = (btn) => (btn) => {
+  //   handleClick(btn);
+  //   setIsDrawerOpen("false")
+
+  // }
+
+
+
   return (
     <div className="fixed drawer z-40	">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+      <input
+        id="my-drawer"
+        type="checkbox"
+          // checked={isDrawerOpen}
+        //  onChange={handleDrawerToggle}
+        className="drawer-toggle" />
 
-      <div className="drawer-content mx-3 my-2">
+      <div className="drawer-content mx-3 my-2 ">
         {/* <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label> */}
-        
-        
+
+
         <label htmlFor="my-drawer" className="btn btn-circle swap swap-rotate">
           {/* this hidden checkbox controls the state */}
           <input type="checkbox" />
@@ -80,9 +94,9 @@ function SmSideMenu({ clicked, handleClick }) {
           <img src="/logo.png" alt="Logo" className='my-1' />
           <h2 className="text-4xl	ms-1 mb-2 text-center" style={{ color: "white", fontWeight: "500" }}>FShare</h2>
 
-          <DrawerBTN name="Home" ICON={HomeOutlinedIcon} callBack={handleClick} state={clicked} />
-          <DrawerBTN name="Connect" ICON={CastConnectedOutlinedIcon} callBack={handleClick} state={clicked} />
-          <DrawerBTN name="Setting" ICON={SettingsOutlinedIcon} callBack={handleClick} state={clicked} />
+          <DrawerBTN className="drawer-toggle" name="Home" ICON={HomeOutlinedIcon} callBack={handleClick}  state={clicked} />
+          <DrawerBTN className="drawer-toggle" name="Connect" ICON={CastConnectedOutlinedIcon} callBack={handleClick} state={clicked} />
+          <DrawerBTN className="drawer-toggle" name="Setting" ICON={SettingsOutlinedIcon} callBack={handleClick} state={clicked} />
 
         </ul>
       </div>
@@ -97,16 +111,16 @@ function SideMenu() {
 
   return (
     <>
-    {/* SmSideMenu for small screens */}
-    <div className="block sm:hidden">
-      <SmSideMenu handleClick={handleClick} clicked={clicked} />
-    </div>
+      {/* SmSideMenu for small screens */}
+      <div className="block sm:hidden">
+        <SmSideMenu handleClick={handleClick} clicked={clicked} />
+      </div>
 
-    {/* MdLGSideMenu for medium and large screens */}
-    <div className="hidden sm:block">
-      <MdLGSideMenu handleClick={handleClick} clicked={clicked} />
-    </div>
-  </>
+      {/* MdLGSideMenu for medium and large screens */}
+      <div className="hidden sm:block">
+        <MdLGSideMenu handleClick={handleClick} clicked={clicked} />
+      </div>
+    </>
   );
 }
 
