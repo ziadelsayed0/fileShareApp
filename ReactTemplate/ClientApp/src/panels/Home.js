@@ -14,18 +14,20 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'; import 
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 import PageNavBar from '../components/PageNavBar';
 import Page from '../components/Page';
+import { ThemeProvider } from '../components/ThemeController';
 
 
-export class Home extends React.Component {
-  static displayName = Home.name;
 
-  render() {
-    return (
-      <Page name="home" Icon={HomeOutlinedIcon}  >
-        <h1>home</h1>
+export function Home() {
+  return (
 
-      </Page>
+    <Page name="home" Icon={HomeOutlinedIcon}  >
 
-    );
-  }
+      <h1>home</h1>
+
+
+    </Page>
+
+  );
+
 }
