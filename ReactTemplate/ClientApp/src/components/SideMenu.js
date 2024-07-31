@@ -12,19 +12,20 @@ import FolderSharedOutlinedIcon from '@mui/icons-material/FolderSharedOutlined';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'; import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 
 import { SideBarBTN, DrawerBTN } from "./SideBarBtn";
-
+import { useTheme } from './ThemeController';
 
 
 
 
 
 function MdLGSideMenu({ handleClick, clicked }) {
-  return (<div style={{ maxWidth: '80px', height: '100vh', backgroundColor: 'black' }} className="fixed top-0 left-0 flex flex-col items-center justify-center">
+
+  const { theme, toggleTheme } = useTheme();
+
+  return (<div style={{ maxWidth: '80px', height: '100vh', backgroundColor: theme.secondaryColor }} className="fixed top-0 left-0 flex flex-col items-center justify-center">
     <ul className="menu rounded-box h-full flex flex-col items-center justify-start ">
 
       <SideBarBTN name="Home" ICON={HomeOutlinedIcon} callBack={handleClick} state={clicked} />
