@@ -13,17 +13,21 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'; import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 import PageNavBar from '../components/PageNavBar';
+import Page from '../components/Page';
+import { ThemeProvider } from '../components/ThemeController';
 
 
-export class Home extends React.Component {
-  static displayName = Home.name;
 
-  render() {
-    return (
-      <div style={{ minHeight: "100vh", backgroundColor: "#090b0d", marginLeft: "80px" }}  >
-        {PageNavBar("Home")}
+export function Home() {
+  return (
 
-      </div>
-    );
-  }
+    <Page name="home" Icon={HomeOutlinedIcon}  >
+
+      <h1>home</h1>
+
+
+    </Page>
+
+  );
+
 }

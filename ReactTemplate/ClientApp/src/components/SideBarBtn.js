@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useTheme } from './ThemeController';
+import { colors } from '@mui/material';
 function SideBarBTN({ name, ICON, callBack, state }) {
   // Prevent callBack from executing immediately
   const handleClick = () => callBack(name);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <li className="my-2 flex flex-col items-center">
@@ -14,7 +16,7 @@ function SideBarBTN({ name, ICON, callBack, state }) {
           width: '50px',
           height: '50px',
           borderRadius: '15px',
-          backgroundColor: state === name ? '#ef0533' : '#000',
+          backgroundColor: state === name ? theme.sidebar.activeBtn : theme.sidebar.background,
           border: 'none',
           padding: '0',
           cursor: 'pointer',
@@ -26,16 +28,17 @@ function SideBarBTN({ name, ICON, callBack, state }) {
         }}
         className="flex flex-col items-center hover:bg-opacity-80"
       >
-        <ICON className="text-white" style={{ fontSize: '20px' }} />
-        <p className="text-center text-white text-xs">{name}</p>
+        <ICON style={{ fontSize: '20px', color: theme.color }} />
+        <p className="text-center text-xs " style={{ color: theme.color }} >{name}</p>
       </Link>
     </li>
   );
 }
 
-function DrawerBTN({ name, ICON, callBack, state }) {
+function DrawerBTN({ name, ICON, callBack, state, onClick }) {
   // Prevent callBack from executing immediately
   const handleClick = () => callBack(name);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <li className="my-2 flex items-center">
@@ -45,7 +48,7 @@ function DrawerBTN({ name, ICON, callBack, state }) {
         style={{
           height: "35px",
           borderRadius: '5px',
-          backgroundColor: state === name ? '#ef0533' : '#000',
+          backgroundColor: state.toLowerCase() === name.toLowerCase() ? theme.sidebar.activeBtn : theme.sidebar.background,
           border: 'none',
           padding: '0',
           cursor: 'pointer',
@@ -56,9 +59,9 @@ function DrawerBTN({ name, ICON, callBack, state }) {
         }}
         className="w-full hover:bg-opacity-80"
       >
-        <div className='flex items-center'>
-          <ICON className="text-white" style={{ fontSize: '20px' }} />
-          <p className="text-white text-xs mx-1">{name}</p>
+        <div className='flex items-start'>
+          <ICON style={{ fontSize: '20px' ,color:theme.color}} />
+          <p className="text-xs mx-1"  style={{ color:theme.color}}>{name}</p>
         </div>
       </Link>
     </li>

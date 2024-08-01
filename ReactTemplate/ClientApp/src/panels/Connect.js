@@ -13,6 +13,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'; import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 import PageNavBar from '../components/PageNavBar';
+import Page from '../components/Page';
 
 
 export class Connect extends React.Component {
@@ -20,11 +21,11 @@ export class Connect extends React.Component {
 
   render() {
     return (
-      <div style={{ minHeight: "100vh", backgroundColor: "#090b0d" }}>
-        {PageNavBar("Connect")}
+      <Page name="connect" Icon={HomeOutlinedIcon}  >
+        <h1>connect</h1>
 
+    </Page>
 
-      </div>
     );
   }
 }

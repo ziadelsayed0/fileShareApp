@@ -40,7 +40,7 @@ function LoginFrm() {
                         </svg>
 
 
-                        <input type="password" className="grow input input rounded-lg" placeholder='password' />
+                        <input type="password" className="grow input input rounded-lg" placeholder='Password' />
                     </label>
 
 
