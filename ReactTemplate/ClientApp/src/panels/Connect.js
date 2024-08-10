@@ -22,8 +22,8 @@ export class Connect extends React.Component {
   render() {
     return (
       <Page name="connect" Icon={HomeOutlinedIcon}>
-        <div style={{ minHeight: "100vh", backgroundColor: "#090b0d" }}>
-          <div className="min-h-screen bg-[#090b0d] flex items-start justify-center pt-12">
+        <div style={{ minHeight: "100vh"}}>
+          <div className="min-h-screen flex items-start justify-center pt-12">
             <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
               <h1 className="text-2xl font-bold text-center text-gray-900 mb-6">
                 Connect a Device
