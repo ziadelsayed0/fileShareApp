@@ -13,17 +13,18 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 import PageNavBar from '../components/PageNavBar';
+import Page from '../components/Page';
 
 
 export class Setting extends React.Component {
 
   render() {
     return (
-      <div style={{ minHeight: "100vh", backgroundColor: "#090b0d" }}>
-        
-        {PageNavBar("Setting")}
-      
-      </div>
+      <Page name="setting" Icon={HomeOutlinedIcon}  >
+        <h1>Setting</h1>
+
+      </Page>
+
     );
   }
 }
