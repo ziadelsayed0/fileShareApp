@@ -22,7 +22,6 @@ export class Connect extends React.Component {
   render() {
     return (
       <Page name="connect" Icon={HomeOutlinedIcon}>
-        <div style={{ minHeight: "100vh"}}>
           <div className="min-h-screen flex items-start justify-center pt-12">
             <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
               <h1 className="text-2xl font-bold text-center text-gray-900 mb-6">
@@ -93,7 +92,6 @@ export class Connect extends React.Component {
               </form>
             </div>
           </div>
-        </div>
       </Page>
 
     );
